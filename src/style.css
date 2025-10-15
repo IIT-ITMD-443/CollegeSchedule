@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-family: "Share Tech Mono", monospace;
     font-weight: 400;
@@ -23,6 +29,7 @@ header h1{
     background-color: #A32626;
     color: #FFFFFF;
     padding: 15px 0;
+    margin-top: 20px;
     text-align: center;
     font-size: 1.8em;
     border-bottom: 4px solid #731A1A;
@@ -97,12 +104,19 @@ header h1{
 .semester {
     flex: 1; /* fills available space evenly */
     height: 300px;
-    justify-content: center;
     background-color: #fffaf5;          
     border: 4px solid #F2B134;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px 30px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.box{
+    background-color: #fffaf5;
+    border: 2px solid #bab8b4;
+    padding: 5px 20px;
+    border-radius: 12px;
+    text-align: left;
 }
 
 @media (max-width: 1024px) {
