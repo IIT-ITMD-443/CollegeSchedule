@@ -72,23 +72,25 @@ main{
 
 @media (max-width: 1024px) {
     .semesters{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: lightpink;
-}
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
-  main {
-    padding: 10px;
-  }
-  .semesters{
-    flex-direction: column;
-}
-.left{
-    flex-direction: row;
-}
+    .container{
+        flex-direction: column;
+    }
+
+    .left{
+        flex-direction: row;
+    }
+    .box-add{
+        flex: 2;
+    }
+
+    .box-total{
+        flex: 1;
+    }
 
 }
 
