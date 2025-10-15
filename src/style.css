@@ -84,10 +84,10 @@ main{
     padding: 10px;
   }
   .semesters{
-    display: flex;
     flex-direction: column;
-    gap: 20px;
-    background-color: lightpink;
+}
+.left{
+    flex-direction: row;
 }
 
 }
