@@ -118,7 +118,7 @@ header h1{
     width: 75%;
 }
 
-.button {
+#openBtn {
     display: flex; 
     align-items: center; 
     border: none;
@@ -129,15 +129,19 @@ header h1{
     color: #bab8b4;
 }
 
-.button img{
+#openBtn img{
     margin-right: 8px;
     width: 30px;
     height: 30px;
 }
 
-.button:hover{
+#openBtn:hover{
     border-radius: 12px;
     background-color:#ecebe9;
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,0.5);
 }
 
 @media (max-width: 1024px) {
