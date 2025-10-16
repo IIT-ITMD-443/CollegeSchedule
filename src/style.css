@@ -149,11 +149,9 @@ header h1{
 @media (max-width: 480px) {
     .container{
         flex-direction: column;
+        margin: 10px 0px;
     }
-
-    .left{
-        flex-direction: row;
-    }
+    
     .box-add{
         flex: 2;
     }
