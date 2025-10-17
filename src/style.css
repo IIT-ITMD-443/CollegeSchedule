@@ -181,7 +181,7 @@ header {
     padding-right: 7px;
     color: #3A1C00;
     font-weight: 500;
-    margin: 20px auto 0;
+    margin: auto auto 0;
     width: fit-content; 
 }
 
@@ -195,9 +195,6 @@ img {
     width: 30px;
     height: 30px;
 }
-
-
-
 
 dialog::backdrop {
     background-color: rgba(37, 36, 36, 0.2); /* much lighter tint */
@@ -257,19 +254,19 @@ form {
 }
 
 .hidden-checkbox {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .custom-label {
-  display: inline-block;
-  background-color: #f2b134;
-  color: #3a1c00;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    display: inline-block;
+    background-color: #f2b134;
+    color: #3a1c00;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .custom-label.custom-label:hover{
@@ -277,15 +274,10 @@ form {
 }
 
 .hidden-checkbox:checked + .custom-label {
-  background-color: #d18f00; /* darker yellow when active */
+    background-color: #d18f00; /* darker yellow when active */
 }
 
 
-.closeBtn{
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-}
 
 
 @media (max-width: 1024px) {
