@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #f7f4ef;
+    background-color: #F9F6F1;
 }
 
 h1 {
@@ -21,10 +21,12 @@ h1 {
 
 h2 {
     font-size: 1.3em;
+    color: #1A3B4C;
 }
 
 h3 {
   font-size: 1.1em;
+  color: #1A3B4C;
 }
 
 h4 {
@@ -44,18 +46,21 @@ button {
 }
 
 header h1 {
-    background-color: #A32626;
-    color: #FFFFFF;
+    color: #1A3B4C;
     padding: 15px 0;
     text-align: center;
     border-bottom: 4px solid #731A1A;
+}
+
+header {
+    margin-bottom: 75px;
 }
 
 .container {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    margin: 30px;
+    margin: 50px;
 }
 
 .left {
@@ -97,13 +102,12 @@ header h1 {
 .year {
     display: flex;
     flex-direction: column;
-    flex: 1 1 400px;
-    gap: 10px;
-    background: linear-gradient(180deg, #A32626 0%, #8B1E1E 100%);
-    border: 2px solid #731A1A; 
+    gap: 10px; 
     border-radius: 12px;
     padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-top: 4px solid #F2B134;
+    background: #731A1A;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .year > h2:first-of-type {
@@ -120,15 +124,15 @@ header h1 {
 .semester {
     display: flex;
     flex-direction: column;
-    flex: 1 1 300px; /* fills available space evenly */
+    flex: 1 1 0px; /* fills available space evenly */
     gap: 20px;
-    background-color: #fffaf5;          
-    border: 4px solid #F2B134;
+    background-color: #FFFFFF;          
+    border: 2px solid #BCA56A;
     border-radius: 12px;
     padding: 15px 20px 10px 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     align-items: center;
-    
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .classes {
@@ -148,7 +152,13 @@ header h1 {
     border-radius: 12px;
     text-align: left;
     gap: 10px;
-    
+}
+
+.box:hover {
+    border-color: #F2B134;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: scale(1.01);
+    transition: 0.2s ease;
 }
 
 .boxDesc {
@@ -161,10 +171,6 @@ header h1 {
     color: #A32626;
 }
 
-.openBtn {
-    margin-top: auto; /* this pushes it to the bottom */
-}
-
 .openBtn, .closeBtn {
     display: flex; 
     align-items: center; 
@@ -173,7 +179,15 @@ header h1 {
     cursor: pointer;
     padding-left: 5px;
     padding-right: 7px;
-    color: #bab8b4;
+    color: #3A1C00;
+    font-weight: 500;
+    margin: 20px auto 0;
+    width: fit-content; 
+}
+
+.openBtn:hover, .closeBtn:hover {
+    border-radius: 12px;
+    background-color:#ecebe9;
 }
 
 img {
@@ -182,10 +196,6 @@ img {
     height: 30px;
 }
 
-.openBtn:hover {
-    border-radius: 12px;
-    background-color:#ecebe9;
-}
 
 
 
@@ -201,6 +211,8 @@ dialog {
     border-radius: 8px;
     padding: 15px;
     border: none;
+    background-color: #fffaf5;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .df-container {
@@ -258,6 +270,10 @@ form {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+
+.custom-label.custom-label:hover{
+    background-color: #d18f00;
 }
 
 .hidden-checkbox:checked + .custom-label {
