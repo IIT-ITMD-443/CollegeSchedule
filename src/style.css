@@ -181,9 +181,9 @@ header {
     padding-right: 7px;
     color: #3A1C00;
     font-weight: 500;
-    margin: auto auto 0;
-    width: fit-content; 
+    margin-top: auto;
 }
+
 
 .openBtn:hover, .closeBtn:hover {
     border-radius: 12px;
@@ -215,8 +215,10 @@ dialog {
 .df-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     gap: 20px;
+    justify-content: space-between; /* makes top form + bottom button stretch vertically */
 }
 
 .imgadd {
@@ -278,8 +280,6 @@ form {
 }
 
 
-
-
 @media (max-width: 1024px) {
     .semesters{
         flex-direction: column;
@@ -301,7 +301,8 @@ form {
     }
 
     dialog {
-    max-width: 80%;
+        max-width: 80%;
+        height: 90vh;
     }
 }
 
