@@ -15,11 +15,17 @@ function setupModals() {
   
   //2. Choose the event type - in this case it is when the button is clicked
   // Add a click listener to each open button
+
+  let activeSemester = null;
   openButtons.forEach(button => {
     button.addEventListener("click", event => {
       const targetId = event.currentTarget.dataset.target; // get ID from data-target
       const dialog = document.getElementById(targetId);    // find the matching <dialog>
+      activeSemester = event.currentTarget.closest('.semester'); // remember which semester
+      const form = dialog.querySelector('form');
+
       if (dialog) {
+        if (form) form.reset(); // clear before showing
         dialog.showModal(); // open the modal
         document.body.style.overflow = "hidden"; // stop scroll manually
 
@@ -35,8 +41,14 @@ function setupModals() {
     button.addEventListener("click", event => {
       const targetId = event.currentTarget.dataset.target; // get ID from data-target
       const dialog = document.getElementById(targetId);    // find the matching <dialog>
-      if (dialog) {
+      
+      
+      if (dialog && activeSemester) {
+        setUpClasses(activeSemester);
+
         dialog.close(); // close the modal
+        activeSemester = null; // reset
+      
         document.body.style.overflow = ""; // restore scroll
       } 
     });
@@ -47,6 +59,39 @@ function setupModals() {
   //event.currentTarget → the button that was actually clicked.
 
   //.dataset.target → grabs the value of data-target="something" from the HTML.
+}
+
+function setUpClasses(semester) {
+  const box = document.createElement('div');
+  box.classList.add('box');
+
+  const boxDesc= document.createElement('div');
+  boxDesc.classList.add('boxDesc');
+
+  const heading = document.createElement('h3');
+  const cname = document.getElementById('courseName');
+  heading.textContent = cname.value;
+  box.appendChild(heading);
+
+  // collect all checked labels
+  const checkedLabels = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+    .map(cb => cb.nextElementSibling.textContent)
+    .join(', '); // combine all into one string
+
+  const tags = document.createElement('p');
+  tags.textContent = `Tags: ${checkedLabels || 'None'}`;
+  boxDesc.appendChild(tags);
+
+  const credits = document.createElement('p');
+  const creditform = document.getElementById('credits');
+  credits.textContent = creditform.value;
+  boxDesc.appendChild(credits);
+
+  box.appendChild(boxDesc);
+
+  // add to the right semester
+  semester.querySelector('.classes').appendChild(box);
+
 }
 
 
