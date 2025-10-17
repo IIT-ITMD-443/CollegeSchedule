@@ -8,7 +8,7 @@
     	<script src="script.js"></script>
 	</head>
 	<body>
-		<div class="modal-backdrop hidden"></div> <!--Class names: modal-backdrop, hidden-->
+		
 		<main>
 			<header>
 				<h1>4 Year Plan</h1>
@@ -48,9 +48,54 @@
 									<p>CUSTOM</p>
 								</button>
 								<dialog id="dialog-1">
-									<h2>Add Classes</h2>
-									<p>Filler info</p>
-									<button class="closeBtn" data-target="dialog-1" type="button">Add</button>
+									<div class="df-container">
+										<div class="imgadd">
+											<img src="img/add.png" alt="add icon">
+											<h2>Add class</h2>
+										</div>
+										<p>Allows you to add your class name, credits, and labels to keep track of graduation requirements.</p>
+										<form>
+											<div class="row1">
+												<label for="courseName">Course Name</label>
+												<input type="text" id="courseName" name="courseName">
+											</div>
+											<div class="row1">
+												<label for=credits">Credits</label>	
+												<input type="text" id="credits" name="credits">
+											</div>
+											<div class="row2">
+												<div class="checkrow">
+													<input type="checkbox" id="option1" class="hidden-checkbox">
+													<label for="option1" class="custom-label">Major</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option2" class="hidden-checkbox">
+													<label for="option2" class="custom-label">Minor</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option3" class="hidden-checkbox">
+													<label for="option3" class="custom-label">Electives</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option4" class="hidden-checkbox">
+													<label for="option4" class="custom-label">Free Electives</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option5" class="hidden-checkbox">
+													<label for="option5" class="custom-label">MATH</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option6" class="hidden-checkbox">
+													<label for="option6" class="custom-label">Natural Science/Engineering Requirements</label>
+												</div>
+												<div class="checkrow">
+													<input type="checkbox" id="option7" class="hidden-checkbox">
+													<label for="option7" class="custom-label">Humanities and Social Sciences Requirements</label>
+												</div>
+											</div>
+										</form>
+										<button class="closeBtn" data-target="dialog-1" type="button">Add</button>
+									</div>	
 								</dialog>
 							</div>
 							<div class="semester">

@@ -12,7 +12,6 @@ function setupModals() {
   // Select all open and close buttons (select all open and close button elements)
   const openButtons = document.querySelectorAll(".openBtn");    //document.querySelectorAll() returns a NodeList which is a collection of nodes
   const closeButtons = document.querySelectorAll(".closeBtn");  //Not the same as an array but can be iterated with forEach()
-  const backdrop = document.querySelector(".modal-backdrop");
   
   //2. Choose the event type - in this case it is when the button is clicked
   // Add a click listener to each open button
@@ -21,10 +20,12 @@ function setupModals() {
       const targetId = event.currentTarget.dataset.target; // get ID from data-target
       const dialog = document.getElementById(targetId);    // find the matching <dialog>
       if (dialog) {
-        backdrop.classList.remove("hidden"); // show backdrop
-        //Every HTML element has a property called .classList
-        // .add and .remove are methods of the object classList
         dialog.showModal(); // open the modal
+        document.body.style.overflow = "hidden"; // stop scroll manually
+
+        //Normally, the <body> element controls the page’s scrollbar.
+        //you’re telling the browser:
+        //“Don’t show any scrollbars or allow scrolling on this page.”
       } 
     });
   });
@@ -35,8 +36,8 @@ function setupModals() {
       const targetId = event.currentTarget.dataset.target; // get ID from data-target
       const dialog = document.getElementById(targetId);    // find the matching <dialog>
       if (dialog) {
-        backdrop.classList.add("hidden"); // hide backdrop
-        dialog.close();                          // close the modal
+        dialog.close(); // close the modal
+        document.body.style.overflow = ""; // restore scroll
       } 
     });
   });
