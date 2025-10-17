@@ -8,6 +8,7 @@
     	<script src="script.js"></script>
 	</head>
 	<body>
+		<div class="modal-backdrop hidden"></div> <!--Class names: modal-backdrop, hidden-->
 		<main>
 			<header>
 				<h1>4 Year Plan</h1>
@@ -42,14 +43,14 @@
 								<div class="box">
 									<p>Class 5</p>
 								</div>
-								<button id="openBtn" type="button">
+								<button class="openBtn" data-target="dialog-1" type="button">
 									<img src="img/add.png" alt="add icon">
 									<p>CUSTOM</p>
 								</button>
-								<dialog id="dialog">
+								<dialog id="dialog-1">
 									<h2>Add Classes</h2>
 									<p>Filler info</p>
-									<button id="closeBtn" type="button">Add</button>
+									<button class="closeBtn" data-target="dialog-1" type="button">Add</button>
 								</dialog>
 							</div>
 							<div class="semester">

@@ -118,7 +118,7 @@ header h1{
     width: 75%;
 }
 
-#openBtn {
+.openBtn, .closeBtn {
     display: flex; 
     align-items: center; 
     border: none;
@@ -129,20 +129,40 @@ header h1{
     color: #bab8b4;
 }
 
-#openBtn img{
+.openBtn img{
     margin-right: 8px;
     width: 30px;
     height: 30px;
 }
 
-#openBtn:hover{
+.openBtn:hover{
     border-radius: 12px;
     background-color:#ecebe9;
 }
 
-dialog::backdrop {
-  background: rgba(0,0,0,0.5);
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(240, 240, 240, 0.2); /* much lighter tint */
+  transition: opacity 0.3s ease;
+  z-index: 999;
+  opacity: 1;
 }
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+dialog{
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    padding: 15px;
+    border: none;
+}
+
+
 
 @media (max-width: 1024px) {
     .semesters{
